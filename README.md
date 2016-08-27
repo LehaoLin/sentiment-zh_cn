@@ -1,4 +1,4 @@
-## sentiment
+## sentiment-zh_cn
 #### 基于修订的AFINN的中文nodejs情感分析库
 
 本项目为[sentiment](https://github.com/thisandagain/sentiment/)项目的中文fork，基于[AFINN-111](http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010)词库的中文翻译对中文文本进行[情感分析](http://en.wikipedia.org/wiki/Sentiment_analysis)。

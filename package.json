@@ -1,7 +1,7 @@
 {
   "author": "Omega Coleman <omegacoleman@gmail.com>, Andrew Sliwinski <andrewsliwinski@acm.org>",
   "name": "sentiment-zh_cn",
-  "description": "AFINN-based sentiment analysis for Node.js",
+  "description": "基于修订的AFINN的中文nodejs情感分析库",
   "version": "2.0.0",
   "homepage": "https://github.com/omegacoleman/sentiment-zh_cn",
   "repository": {
