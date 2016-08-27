@@ -1,63 +1,53 @@
 ## sentiment
-#### AFINN-based sentiment analysis for Node.js
+#### 基于修订的AFINN的中文nodejs情感分析库
 
-[![Build Status](https://travis-ci.org/thisandagain/sentiment.svg?branch=develop)](https://travis-ci.org/thisandagain/sentiment)
-[![Coverage Status](https://coveralls.io/repos/thisandagain/sentiment/badge.svg?branch=develop&service=github)](https://coveralls.io/github/thisandagain/sentiment?branch=develop)
-[![Dependency Status](https://david-dm.org/thisandagain/sentiment.svg)](https://david-dm.org/thisandagain/sentiment)
-[![devDependency Status](https://david-dm.org/thisandagain/sentiment/dev-status.svg)](https://david-dm.org/thisandagain/sentiment#info=devDependencies)
+本项目为[sentiment](https://github.com/thisandagain/sentiment/)项目的中文fork，基于[AFINN-111](http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010)词库的中文翻译对中文文本进行[情感分析](http://en.wikipedia.org/wiki/Sentiment_analysis)。
 
-Sentiment is a Node.js module that uses the [AFINN-111](http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010) wordlist to perform [sentiment analysis](http://en.wikipedia.org/wiki/Sentiment_analysis) on arbitrary blocks of input text. Sentiment provides serveral things:
+sentiment-zh_cn在build/目录下提供一份编译AFINN词库的工具和用于保护助语速的源文件。
 
-- Performance (see benchmarks below)
-- The ability to append and overwrite word / value pairs from the AFINN wordlist
-- A build process that makes updating sentiment to future versions of the AFINN word list trivial
-
-### Installation
+### 安装
 ```bash
-npm install sentiment
+npm install sentiment-zh_cn
 ```
 
-### Usage
+### 用法
 ```javascript
-var sentiment = require('sentiment');
+var sentiment = require('sentiment-zh_cn');
 
-var r1 = sentiment('Cats are stupid.');
-console.dir(r1);        // Score: -2, Comparative: -0.666
-
-var r2 = sentiment('Cats are totally amazing!');
-console.dir(r2);        // Score: 4, Comparative: 1
+var r1 = sentiment('网络不是法外之地。党政机关微信工作群是展示、交流、沟通、讨论工作的平台，属于“公共场所”，党员领导干部是公众人物，一言一行都代表着党和政府的形象。在微信群转发淫秽图片，既破坏了网络环境，危害他人身心健康，又违反了工作纪律、生活纪律，损害了党和政府形象，造成不良影响，必然要受到党纪处理。随即，当地纪委也迅速介入了调查。');
+console.dir(r1);
 ```
 
-### Adding / overwriting words
-You can append and/or overwrite values from AFINN by simply injecting key/value pairs into a sentiment method call:
+运行结果为：
+
 ```javascript
-var sentiment = require('sentiment');
-
-var result = sentiment('Cats are totally amazing!', {
-    'cats': 5,
-    'amazing': 2  
-});
-console.dir(result);    // Score: 7, Comparative: 1.75
+{ score: -6,
+  comparative: -0.08955223880597014,
+  tokens:
+   [ '网络',
+     '不是',
+     '法',
+     '外', ……],
+  words: [ '迅速', '影响', '损害', '违反', '健康', '危害', '破坏' ],
+  positive: [ '迅速', '健康' ],
+  negative: [ '影响', '损害', '违反', '危害', '破坏' ] }
 ```
 
----
+### 增加或覆盖词汇评分
+在参数列表里增加一个包含自定义词汇评分的字典即可。
 
-### Benchmarks
-The primary motivation for designing `sentiment` was performance. As such, it includes a benchmark script within the test directory that compares it against the [Sentimental](https://github.com/thinkroth/Sentimental) module which provides a nearly equivalent interface and approach. Based on these benchmarks, running on a MacBook Pro with Node 0.12.7, `sentiment` is **twice as fast** as alternative implementations:
+```javascript
+var sentiment = require('sentiment-zh_cn');
 
-```bash
-sentiment (Latest) x 544,714 ops/sec ±0.83% (99 runs sampled)
-Sentimental (1.0.1) x 269,417 ops/sec ±1.06% (96 runs sampled)
+var r2 = sentiment('他妈的你不想活了？', {'妈的': -10});
+console.dir(r2);
 ```
 
-To run the benchmarks yourself, simply:
-```bash
-make benchmark
-```
-
----
-
-### Testing
-```bash
-npm test
+```javascript
+{ score: -10,
+  comparative: -2,
+  tokens: [ '他', '妈的', '你', '不想', '活' ],
+  words: [ '妈的' ],
+  positive: [],
+  negative: [ '妈的' ] }
 ```
