@@ -1,9 +1,9 @@
 ## sentiment-zh_cn
-#### 基于修订的AFINN的中文nodejs情感分析库
+#### 基于本地化的AFINN的中文nodejs情感分析库
 
-本项目为[sentiment](https://github.com/thisandagain/sentiment/)项目的中文fork，基于[AFINN-111](http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010)词库的中文翻译对中文文本进行[情感分析](http://en.wikipedia.org/wiki/Sentiment_analysis)。
+本项目为[sentiment](https://github.com/thisandagain/sentiment/)项目的中文fork，基于本地化的[AFINN-111](http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010)词库对中文文本进行[情感分析](http://en.wikipedia.org/wiki/Sentiment_analysis)。
 
-sentiment-zh_cn在build/目录下提供一份编译AFINN词库的工具和用于保护助语速的源文件。
+sentiment-zh_cn在build/目录下提供一份编译AFINN词库的工具和用于保护助语素的源文件。
 
 ### 安装
 ```bash
