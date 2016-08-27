@@ -14,7 +14,7 @@ var async   = require('async'),
 /**
  * Read AFINN data from original format
  */
-fs.readFile(__dirname + '/AFINN.txt', function (err, data) {
+fs.readFile(__dirname + '/AFINN-zh_cn.txt', function (err, data) {
     // Storage object
     var hash = new Object(null);
 
@@ -29,7 +29,7 @@ fs.readFile(__dirname + '/AFINN.txt', function (err, data) {
 
         // Write out JSON
         fs.writeFile(
-            __dirname + '/AFINN.json', 
+            __dirname + '/AFINN-zh_cn.json', 
             JSON.stringify(hash), 
         function (err) {
             if (err) throw new Error(err);

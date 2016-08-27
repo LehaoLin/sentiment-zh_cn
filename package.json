@@ -1,25 +1,27 @@
 {
-  "author": "Andrew Sliwinski <andrewsliwinski@acm.org>",
-  "name": "sentiment",
+  "author": "Omega Coleman <omegacoleman@gmail.com>, Andrew Sliwinski <andrewsliwinski@acm.org>",
+  "name": "sentiment-zh_cn",
   "description": "AFINN-based sentiment analysis for Node.js",
   "version": "2.0.0",
-  "homepage": "https://github.com/thisandagain/sentiment",
+  "homepage": "https://github.com/omegacoleman/sentiment-zh_cn",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thisandagain/sentiment.git"
+    "url": "https://github.com/omegacoleman/sentiment-zh_cn.git"
   },
   "keywords": [
     "sentiment",
     "analysis",
     "nlp",
-    "sentiment analysis"
+    "sentiment analysis", 
+    "chinese"
   ],
   "main": "./lib/index.js",
   "scripts": {
     "test": "make test"
   },
   "dependencies": {
-    "lodash.assign": "4.1.0"
+    "lodash.assign": "4.1.0",
+    "segment": "^0.1.3"
   },
   "devDependencies": {
     "Sentimental": "1.0.1",
