@@ -2,7 +2,7 @@
   "author": "Omega Coleman <omegacoleman@gmail.com>, Andrew Sliwinski <andrewsliwinski@acm.org>",
   "name": "sentiment-zh_cn",
   "description": "基于本地化的AFINN的中文nodejs情感分析库",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "homepage": "https://github.com/omegacoleman/sentiment-zh_cn",
   "repository": {
     "type": "git",
@@ -12,13 +12,13 @@
     "sentiment",
     "analysis",
     "nlp",
-    "sentiment analysis", 
+    "sentiment analysis",
     "chinese"
   ],
   "main": "./lib/index.js",
   "dependencies": {
     "lodash.assign": "4.1.0",
-    "segment": "^0.1.3"
+    "node-analyzer": "^5.0.0"
   },
   "devDependencies": {
     "Sentimental": "1.0.1",
