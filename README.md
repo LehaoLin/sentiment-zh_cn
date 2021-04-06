@@ -5,9 +5,13 @@
 
 **因为sentiment-zh_cn项目中的node-analyzer依赖无法在webpack环境下使用，所以将相关分词依赖包换成[sengmentit](https://github.com/linonetwo/segmentit)**
 
+以下描述搬运自[sentiment-zh_cn](https://github.com/omegacoleman/sentiment-zh_cn)，只是将包名sentiment-zh_cn替换为sentiment-zh_cn_web
+
+---
+
 基于本地化的[AFINN-111](http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010)词库对中文文本进行[情感分析](http://en.wikipedia.org/wiki/Sentiment_analysis)。
 
-sentiment-zh_cn在build/目录下提供一份编译AFINN词库的工具和用于保护助语素的源文件。
+sentiment-zh_cn_web在build/目录下提供一份编译AFINN词库的工具和用于保护助语素的源文件。
 
 ### 安装
 ```bash
