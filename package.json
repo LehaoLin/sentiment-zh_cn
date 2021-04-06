@@ -18,7 +18,7 @@
   "main": "./lib/index.js",
   "dependencies": {
     "lodash.assign": "4.1.0",
-    "node-analyzer": "^5.0.0"
+    "segmentit": "^2.0.3"
   },
   "devDependencies": {
     "Sentimental": "1.0.1",
