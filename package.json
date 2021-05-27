@@ -2,7 +2,7 @@
   "author": "Lehao Lin <lehaolin@link.cuhk.edu.cn>, Omega Coleman <omegacoleman@gmail.com>, Andrew Sliwinski <andrewsliwinski@acm.org>",
   "name": "sentiment-zh_cn_web",
   "description": "基于本地化的AFINN的中文nodejs情感分析库with browser && electron support",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/LehaoLin/sentiment-zh_cn_web",
   "repository": {
     "type": "git",
